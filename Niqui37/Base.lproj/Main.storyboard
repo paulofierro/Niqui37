@@ -18,25 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-Dx-glh">
-                                <rect key="frame" x="55.5" y="244" width="240.5" height="72"/>
+                                <rect key="frame" x="55" y="244" width="240.5" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36I-qm-ah7">
-                                <rect key="frame" x="55.5" y="332" width="303.5" height="72"/>
+                                <rect key="frame" x="55" y="332" width="303.5" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x87-dS-Lx6">
-                                <rect key="frame" x="55.5" y="420" width="319.5" height="72"/>
+                                <rect key="frame" x="55" y="420" width="319.5" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59u-5W-oAz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-Js-jIo">
-                                <rect key="frame" x="55.5" y="156" width="216" height="72"/>
+                                <rect key="frame" x="55" y="156" width="216" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -44,16 +48,32 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="59u-5W-oAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="07T-d9-iH7"/>
                             <constraint firstItem="Woa-Dx-glh" firstAttribute="top" secondItem="vB8-Js-jIo" secondAttribute="bottom" constant="16" id="2k7-hE-dCD"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="Woa-Dx-glh" secondAttribute="bottom" constant="16" id="7TS-TY-IAx"/>
+                            <constraint firstItem="59u-5W-oAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KkZ-n1-IWq"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="leading" secondItem="Woa-Dx-glh" secondAttribute="leading" id="Vmn-KV-4DA"/>
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="top" secondItem="36I-qm-ah7" secondAttribute="bottom" constant="16" id="WYs-6g-xc3"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="Woa-Dx-glh" secondAttribute="bottom" constant="16" id="ZAd-Vz-aLd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="59u-5W-oAz" secondAttribute="bottom" id="aQi-LJ-b5E"/>
+                            <constraint firstItem="59u-5W-oAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="azd-A0-8QA"/>
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="leading" secondItem="36I-qm-ah7" secondAttribute="leading" id="bmQ-N1-pFc"/>
+                            <constraint firstAttribute="trailing" secondItem="59u-5W-oAz" secondAttribute="trailing" id="ftW-GM-jwv"/>
+                            <constraint firstAttribute="trailing" secondItem="59u-5W-oAz" secondAttribute="trailing" id="gge-SZ-GA0"/>
+                            <constraint firstItem="59u-5W-oAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rJP-ko-1ph"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rZZ-Cc-0Py"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vVT-vw-3bV"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="leading" secondItem="vB8-Js-jIo" secondAttribute="leading" id="wSb-9R-z4D"/>
+                            <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="59u-5W-oAz" secondAttribute="bottom" id="yuS-ne-XTe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KkZ-n1-IWq"/>
+                                <exclude reference="gge-SZ-GA0"/>
+                                <exclude reference="rJP-ko-1ph"/>
+                                <exclude reference="yuS-ne-XTe"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -62,6 +82,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="days" destination="vB8-Js-jIo" id="qAU-HZ-RgV"/>
+                        <outlet property="fireworksView" destination="59u-5W-oAz" id="ZHF-xy-cI8"/>
                         <outlet property="hours" destination="Woa-Dx-glh" id="Ajg-Sk-7It"/>
                         <outlet property="minutes" destination="36I-qm-ah7" id="wzb-a7-F1K"/>
                         <outlet property="seconds" destination="x87-dS-Lx6" id="rUu-ux-rkE"/>
