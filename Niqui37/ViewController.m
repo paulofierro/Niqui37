@@ -17,6 +17,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 @property (nonatomic, strong) NSDate *birthday;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSTimer *labelUpdateTimer;
+@property (nonatomic, strong) NSTimer *removeFireworksTimer;
 @property (nonatomic, strong) IBOutlet UILabel *days;
 @property (nonatomic, strong) IBOutlet UILabel *hours;
 @property (nonatomic, strong) IBOutlet UILabel *minutes;
@@ -188,11 +189,27 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     spark.scale             = 0.4;
     spark.birthRate         = 10;
     
+    // Add the cells to parent cells
     preSpark.emitterCells       = @[spark];
     rocket.emitterCells         = @[flare, firework, preSpark];
     self.emitter.emitterCells   = @[rocket];
     
+    // Update the display
     [self.fireworksView setNeedsDisplay];
+    
+    // Set up the timer to remove the fireworks
+    NSTimeInterval timeoutInterval = 3;
+    if (self.removeFireworksTimer == nil || self.removeFireworksTimer.isValid == NO)
+    {
+        self.removeFireworksTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutInterval target:self selector:@selector(removeFireworks) userInfo:nil repeats:NO];
+    }
+    else
+    {
+        NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:timeoutInterval];
+        self.removeFireworksTimer.fireDate = fireDate;
+    }
+}
+
 - (void)removeFireworks
 {
     [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.lifetime"];
