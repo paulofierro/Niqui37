@@ -13,6 +13,7 @@
 		3AB4212A1C7614A300134283 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB421281C7614A300134283 /* Main.storyboard */; };
 		3AB4212C1C7614A300134283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4212B1C7614A300134283 /* Assets.xcassets */; };
 		3AB4212F1C7614A300134283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4212D1C7614A300134283 /* LaunchScreen.storyboard */; };
+		3AD1B91A1C767FA300965496 /* TicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1B9191C767FA300965496 /* TicketViewController.m */; };
 		3E71DD423CBD4532FA27CAB1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E626D57D9F193DDB207AD47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		3AB4212E1C7614A300134283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AB421301C7614A300134283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD1B9171C76208D00965496 /* Niqui37-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Niqui37-Prefix.pch"; sourceTree = "<group>"; };
+		3AD1B9181C767FA300965496 /* TicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketViewController.h; sourceTree = "<group>"; };
+		3AD1B9191C767FA300965496 /* TicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketViewController.m; sourceTree = "<group>"; };
 		3E626D57D9F193DDB207AD47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B22352ACE9771F120BD5157 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6295EE3A6DA128B3429B01D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				3AB421231C7614A300134283 /* AppDelegate.m */,
 				3AB421251C7614A300134283 /* ViewController.h */,
 				3AB421261C7614A300134283 /* ViewController.m */,
+				3AD1B9181C767FA300965496 /* TicketViewController.h */,
+				3AD1B9191C767FA300965496 /* TicketViewController.m */,
 				3AB421281C7614A300134283 /* Main.storyboard */,
 				3AB4212B1C7614A300134283 /* Assets.xcassets */,
 				3AB4212D1C7614A300134283 /* LaunchScreen.storyboard */,
@@ -232,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD1B91A1C767FA300965496 /* TicketViewController.m in Sources */,
 				3AB421271C7614A300134283 /* ViewController.m in Sources */,
 				3AB421241C7614A300134283 /* AppDelegate.m in Sources */,
 				3AB421211C7614A300134283 /* main.m in Sources */,
