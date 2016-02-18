@@ -16,7 +16,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 
 @property (nonatomic, strong) NSDate *birthday;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *labelUpdateTimer;
 @property (nonatomic, strong) IBOutlet UILabel *days;
 @property (nonatomic, strong) IBOutlet UILabel *hours;
 @property (nonatomic, strong) IBOutlet UILabel *minutes;
@@ -43,7 +43,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     [self updateDate];
 
     // Create the timer
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
+    self.labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
 }
 
 - (void)updateDate
@@ -52,6 +52,9 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     
     if ([self.birthday earlierDate:now] == self.birthday)
     {
+        // Stop the timer
+        [self.labelUpdateTimer invalidate];
+        
         // Its birthday time
         self.days.text      = @"";
         self.hours.text     = @"";
