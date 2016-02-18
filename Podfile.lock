@@ -1,0 +1,10 @@
+PODS:
+  - UIView+NibLoading (1.2.0)
+
+DEPENDENCIES:
+  - UIView+NibLoading (~> 1.2.0)
+
+SPEC CHECKSUMS:
+  UIView+NibLoading: 20b93220eeaa99212c608a03c79b13de521d61a5
+
+COCOAPODS: 0.39.0

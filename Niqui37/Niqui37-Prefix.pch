@@ -1,13 +1,18 @@
 //
-//  main.m
+//  Niqui37-Prefix.pch
 //  Niqui37
 //
 //  Created by Paulo Fierro on 18/02/2016.
 //  Copyright © 2016 Paulo Fierro. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#ifndef Niqui37_Prefix_pch
+#define Niqui37_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Niqui37_Prefix_pch */
 
 #ifdef DEBUG
 #define DLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
@@ -16,10 +21,3 @@
 #define DLog(...) do { } while (0)
 #define ALog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
 #endif
-
-
-int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}

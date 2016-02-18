@@ -6,10 +6,8 @@
 //  Copyright © 2016 Paulo Fierro. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface ViewController : UIViewController
 
-
 @end
-
