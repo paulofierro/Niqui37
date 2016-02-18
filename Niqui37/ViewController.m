@@ -65,6 +65,8 @@ static NSString *birthdayString = @"18/02/2016";
     }
     else
     {
+        self.message.hidden = YES;
+        
         // Its no birthday time yet, update the calendar
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSUInteger unitFlags = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
@@ -75,10 +77,17 @@ static NSString *birthdayString = @"18/02/2016";
         NSInteger minutes  = [dateComponents minute];
         NSInteger seconds  = [dateComponents second];
         
-        self.days.text      = (days == 1) ? [NSString stringWithFormat:@"%ld day", days] : [NSString stringWithFormat:@"%ld days", days];
-        self.hours.text     = (hours == 1) ? [NSString stringWithFormat:@"%ld hour", hours] : [NSString stringWithFormat:@"%ld hours", hours];
-        self.minutes.text   = (minutes == 1) ? [NSString stringWithFormat:@"%ld minute", minutes] : [NSString stringWithFormat:@"%ld minutes", minutes];
-        self.seconds.text   = (seconds == 1) ? [NSString stringWithFormat:@"%ld second", seconds] : [NSString stringWithFormat:@"%ld seconds", seconds];
+        self.days.text      = (days == 1)    ? [NSString stringWithFormat:@"%ld day", days]         : [NSString stringWithFormat:@"%ld days", days];
+        self.hours.text     = (hours == 1)   ? [NSString stringWithFormat:@"%ld hour", hours]       : [NSString stringWithFormat:@"%ld hours", hours];
+        self.minutes.text   = (minutes == 1) ? [NSString stringWithFormat:@"%ld minute", minutes]   : [NSString stringWithFormat:@"%ld minutes", minutes];
+        self.seconds.text   = (seconds == 1) ? [NSString stringWithFormat:@"%ld second", seconds]   : [NSString stringWithFormat:@"%ld seconds", seconds];
+        
+        CGFloat disabledAlpha   = 0.25;
+        UIColor *white          = [UIColor whiteColor];
+        self.days.textColor     = (days == 0)    ? [white colorWithAlphaComponent:disabledAlpha] : white;
+        self.hours.textColor    = (hours == 0)   ? [white colorWithAlphaComponent:disabledAlpha] : white;
+        self.minutes.textColor  = (minutes == 0) ? [white colorWithAlphaComponent:disabledAlpha] : white;
+        self.seconds.textColor  = (seconds == 0 && minutes == 0) ? [white colorWithAlphaComponent:disabledAlpha] : white;
     }
 }
 
@@ -91,7 +100,7 @@ static NSString *birthdayString = @"18/02/2016";
     zoom.repeatCount            = INFINITY;
     zoom.timingFunction         = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
     zoom.fillMode               = kCAFillModeForwards;
-    [self.message.layer addAnimation:zoom forKey:@"myHoverAnimation"];
+    [self.message.layer addAnimation:zoom forKey:@"zoomAnimation"];
 }
 
 - (void)addFireworkAtPoint:(CGPoint)point
