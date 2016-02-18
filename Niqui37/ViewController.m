@@ -21,6 +21,7 @@ static NSString *birthdayString = @"18/02/2016";
 @property (nonatomic, strong) IBOutlet UILabel *hours;
 @property (nonatomic, strong) IBOutlet UILabel *minutes;
 @property (nonatomic, strong) IBOutlet UILabel *seconds;
+@property (nonatomic, strong) IBOutlet UILabel *message;
 @property (nonatomic, strong) IBOutlet UIView *fireworksView;
 @property (nonatomic, strong) CALayer *baseLayer;
 @property (nonatomic, strong) CAEmitterLayer *emitter;
@@ -52,13 +53,15 @@ static NSString *birthdayString = @"18/02/2016";
     if ([self.birthday earlierDate:now] == self.birthday)
     {
         // Its birthday time
-        
         self.days.text      = @"";
         self.hours.text     = @"";
         self.minutes.text   = @"🎊🎂🎉";
         self.seconds.text   = @"";
+        self.message.hidden = NO;
         
+        // Unlock the view
         self.unlocked = YES;
+        [self animateMessage];
     }
     else
     {
@@ -79,8 +82,21 @@ static NSString *birthdayString = @"18/02/2016";
     }
 }
 
+- (void)animateMessage
+{
+    // move marker up and down:
+    CABasicAnimation *zoom      = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    zoom.toValue                = @(1.1);
+    zoom.autoreverses           = YES;
+    zoom.repeatCount            = INFINITY;
+    zoom.timingFunction         = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+    zoom.fillMode               = kCAFillModeForwards;
+    [self.message.layer addAnimation:zoom forKey:@"myHoverAnimation"];
+}
+
 - (void)addFireworkAtPoint:(CGPoint)point
 {
+    // Derived from https://github.com/tapwork/iOS-Particle-Fireworks
     UIImage *image = [UIImage imageNamed:@"firework"];
     
     CGRect bounds           = self.fireworksView.bounds;

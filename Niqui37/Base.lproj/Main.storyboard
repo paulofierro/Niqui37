@@ -35,16 +35,22 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59u-5W-oAz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-Js-jIo">
                                 <rect key="frame" x="55" y="156" width="216" height="72"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Birthday Niqui!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIk-jl-iUT">
+                                <rect key="frame" x="20" y="100" width="384" height="142"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59u-5W-oAz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -56,12 +62,15 @@
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="top" secondItem="36I-qm-ah7" secondAttribute="bottom" constant="16" id="WYs-6g-xc3"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="Woa-Dx-glh" secondAttribute="bottom" constant="16" id="ZAd-Vz-aLd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="59u-5W-oAz" secondAttribute="bottom" id="aQi-LJ-b5E"/>
+                            <constraint firstItem="ZIk-jl-iUT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="agW-2M-lfU"/>
                             <constraint firstItem="59u-5W-oAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="azd-A0-8QA"/>
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="leading" secondItem="36I-qm-ah7" secondAttribute="leading" id="bmQ-N1-pFc"/>
                             <constraint firstAttribute="trailing" secondItem="59u-5W-oAz" secondAttribute="trailing" id="ftW-GM-jwv"/>
                             <constraint firstAttribute="trailing" secondItem="59u-5W-oAz" secondAttribute="trailing" id="gge-SZ-GA0"/>
+                            <constraint firstItem="ZIk-jl-iUT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="lf5-uT-wfI"/>
                             <constraint firstItem="59u-5W-oAz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rJP-ko-1ph"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rZZ-Cc-0Py"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIk-jl-iUT" secondAttribute="trailing" constant="10" id="u8Z-mc-jTz"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vVT-vw-3bV"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="leading" secondItem="vB8-Js-jIo" secondAttribute="leading" id="wSb-9R-z4D"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="59u-5W-oAz" secondAttribute="bottom" id="yuS-ne-XTe"/>
@@ -84,6 +93,7 @@
                         <outlet property="days" destination="vB8-Js-jIo" id="qAU-HZ-RgV"/>
                         <outlet property="fireworksView" destination="59u-5W-oAz" id="ZHF-xy-cI8"/>
                         <outlet property="hours" destination="Woa-Dx-glh" id="Ajg-Sk-7It"/>
+                        <outlet property="message" destination="ZIk-jl-iUT" id="5C2-oX-Wg6"/>
                         <outlet property="minutes" destination="36I-qm-ah7" id="wzb-a7-F1K"/>
                         <outlet property="seconds" destination="x87-dS-Lx6" id="rUu-ux-rkE"/>
                     </connections>
