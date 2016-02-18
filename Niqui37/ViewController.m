@@ -245,12 +245,14 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 
 #pragma mark - Touches
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     if (self.isUnlocked)
     {
-        UITouch *touch = touches.allObjects.firstObject;
-        [self addFireworkAtPoint:[touch locationInView:self.fireworksView]];
+        for (UITouch *touch in touches.allObjects)
+        {
+            [self addFireworkAtPoint:[touch locationInView:self.fireworksView]];
+        }
     }
 }
 
