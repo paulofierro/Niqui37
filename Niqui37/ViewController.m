@@ -26,6 +26,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 @property (nonatomic, strong) IBOutlet UIView *fireworksView;
 @property (nonatomic, strong) CALayer *baseLayer;
 @property (nonatomic, strong) CAEmitterLayer *emitter;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
 @property (nonatomic, getter=isUnlocked) BOOL unlocked;
 
 @end
@@ -45,6 +46,8 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 
     // Create the timer
     self.labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
+    
+    [self.view addGestureRecognizer:self.swipeRecognizer];
 }
 
 - (void)updateDate
@@ -106,6 +109,21 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     zoom.fillMode               = kCAFillModeForwards;
     [self.message.layer addAnimation:zoom forKey:@"zoomAnimation"];
 }
+
+- (void)handleSwipe
+{
+    if(self.isUnlocked)
+    {
+        [self showTickets];
+    }
+}
+
+- (void)showTickets
+{
+    [self performSegueWithIdentifier:@"ticketViewSegue" sender:nil];
+}
+
+#pragma mark - Firework Methods
 
 - (void)addFireworkAtPoint:(CGPoint)point
 {
@@ -220,6 +238,17 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 }
 
 #pragma mark - Getters
+
+- (UISwipeGestureRecognizer *)swipeRecognizer
+{
+    if (_swipeRecognizer == nil)
+    {
+        _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+        _swipeRecognizer.numberOfTouchesRequired = 1;
+        _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    }
+    return _swipeRecognizer;
+}
 
 - (CAEmitterLayer *)emitter
 {
