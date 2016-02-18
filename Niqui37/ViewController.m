@@ -10,7 +10,7 @@
 
 #import "ViewController.h"
 
-static NSString *birthdayString = @"18/02/2016";
+static NSString *birthdayString = @"18/02/2016 13:38";
 
 @interface ViewController ()
 
@@ -229,7 +229,7 @@ static NSString *birthdayString = @"18/02/2016";
     if (_dateFormatter == nil)
     {
         _dateFormatter = [NSDateFormatter new];
-        _dateFormatter.dateFormat = @"dd/MM/yyyy";
+        _dateFormatter.dateFormat = @"dd/MM/yyyy HH:mm";
     }
     return _dateFormatter;
 }
