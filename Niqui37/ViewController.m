@@ -193,6 +193,11 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     self.emitter.emitterCells   = @[rocket];
     
     [self.fireworksView setNeedsDisplay];
+- (void)removeFireworks
+{
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.lifetime"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.firework.lifetime"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.preSpark.lifetime"];
 }
 
 #pragma mark - Getters
@@ -203,6 +208,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     {
         _emitter = [CAEmitterLayer layer];
         _emitter.renderMode = kCAEmitterLayerBackToFront;
+        _emitter.lifetime = 1;
     }
     return _emitter;
 }
