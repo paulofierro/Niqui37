@@ -130,10 +130,10 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     rocket.velocityRange        = 100;
     rocket.yAcceleration        = -250;
     rocket.emissionRange        = M_PI / 4;
-    rocket.color                = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
-    rocket.redRange             = 0.5;
-    rocket.greenRange           = 0.5;
-    rocket.blueRange            = 0.5;
+    rocket.color                = [[UIColor whiteColor] colorWithAlphaComponent:1].CGColor;
+    rocket.redRange             = 0.75;
+    rocket.greenRange           = 0.75;
+    rocket.blueRange            = 0.75;
     
     // Flare particles emitted from the rocket as it flys
     CAEmitterCell *flare    = [CAEmitterCell emitterCell];
@@ -182,6 +182,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     
     // The 'sparkle' at the end of a firework
     CAEmitterCell *spark    = [CAEmitterCell emitterCell];
+    spark.name              = @"spark";
     spark.contents          = (id)image.CGImage;
     spark.lifetime          = 0.05;
     spark.yAcceleration     = -250;
@@ -212,9 +213,10 @@ static NSString *birthdayString = @"18/02/2016 13:38";
 
 - (void)removeFireworks
 {
-    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.lifetime"];
-    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.firework.lifetime"];
-    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.preSpark.lifetime"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.birthRate"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.firework.birthRate"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.preSpark.birthRate"];
+    [self.emitter setValue:@(0) forKeyPath:@"emitterCells.rocket.emitterCells.preSpark.emitterCells.spark.birthRate"];
 }
 
 #pragma mark - Getters
