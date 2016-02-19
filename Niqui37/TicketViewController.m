@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     // Define the images
-    self.images = @[@"Goldfish",@"Goldfish",@"Goldfish",@"Goldfish"];
+    self.images = @[@"Flight_out", @"Hotel", @"Goldfish", @"Saturday", @"Mormon", @"Flight_back"];
     
     [self createScrollableImages];
 }
