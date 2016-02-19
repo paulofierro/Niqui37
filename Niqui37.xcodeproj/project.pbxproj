@@ -14,6 +14,13 @@
 		3AB4212C1C7614A300134283 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4212B1C7614A300134283 /* Assets.xcassets */; };
 		3AB4212F1C7614A300134283 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB4212D1C7614A300134283 /* LaunchScreen.storyboard */; };
 		3AD1B91A1C767FA300965496 /* TicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1B9191C767FA300965496 /* TicketViewController.m */; };
+		3AE7FD8D1C7791A0006A6738 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7FD8C1C7791A0006A6738 /* AudioManager.m */; };
+		3AE7FD9B1C77974B006A6738 /* single_firework.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9A1C77974B006A6738 /* single_firework.caf */; };
+		3AE7FDA11C7797A1006A6738 /* Book-Of-Mormon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */; };
+		3AE7FDA21C7797A1006A6738 /* Goldfish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */; };
+		3AE7FDA31C7797A1006A6738 /* Happy-Birthday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */; };
+		3AE7FDA41C7797A1006A6738 /* Hotel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */; };
+		3AE7FDA51C7797A1006A6738 /* Take-Off.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */; };
 		3E71DD423CBD4532FA27CAB1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E626D57D9F193DDB207AD47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +38,14 @@
 		3AD1B9171C76208D00965496 /* Niqui37-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Niqui37-Prefix.pch"; sourceTree = "<group>"; };
 		3AD1B9181C767FA300965496 /* TicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketViewController.h; sourceTree = "<group>"; };
 		3AD1B9191C767FA300965496 /* TicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketViewController.m; sourceTree = "<group>"; };
+		3AE7FD8B1C7791A0006A6738 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		3AE7FD8C1C7791A0006A6738 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
+		3AE7FD9A1C77974B006A6738 /* single_firework.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = single_firework.caf; sourceTree = "<group>"; };
+		3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Book-Of-Mormon.mp3"; sourceTree = "<group>"; };
+		3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Goldfish.mp3; sourceTree = "<group>"; };
+		3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Happy-Birthday.mp3"; sourceTree = "<group>"; };
+		3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hotel.mp3; sourceTree = "<group>"; };
+		3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Take-Off.mp3"; sourceTree = "<group>"; };
 		3E626D57D9F193DDB207AD47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B22352ACE9771F120BD5157 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6295EE3A6DA128B3429B01D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,10 +98,10 @@
 				3AB421261C7614A300134283 /* ViewController.m */,
 				3AD1B9181C767FA300965496 /* TicketViewController.h */,
 				3AD1B9191C767FA300965496 /* TicketViewController.m */,
-				3AB421281C7614A300134283 /* Main.storyboard */,
-				3AB4212B1C7614A300134283 /* Assets.xcassets */,
-				3AB4212D1C7614A300134283 /* LaunchScreen.storyboard */,
-				3AB421301C7614A300134283 /* Info.plist */,
+				3AE7FD8B1C7791A0006A6738 /* AudioManager.h */,
+				3AE7FD8C1C7791A0006A6738 /* AudioManager.m */,
+				3AE7FD8A1C779144006A6738 /* Views */,
+				3AE7FD891C779130006A6738 /* Audio */,
 				3AB4211F1C7614A300134283 /* Supporting Files */,
 			);
 			path = Niqui37;
@@ -95,10 +110,34 @@
 		3AB4211F1C7614A300134283 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AB4212B1C7614A300134283 /* Assets.xcassets */,
+				3AB421301C7614A300134283 /* Info.plist */,
 				3AB421201C7614A300134283 /* main.m */,
 				3AD1B9171C76208D00965496 /* Niqui37-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AE7FD891C779130006A6738 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */,
+				3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */,
+				3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */,
+				3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */,
+				3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */,
+				3AE7FD9A1C77974B006A6738 /* single_firework.caf */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		3AE7FD8A1C779144006A6738 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AB421281C7614A300134283 /* Main.storyboard */,
+				3AB4212D1C7614A300134283 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9D4A704514930371B131DACC /* Pods */ = {
@@ -177,8 +216,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AB4212F1C7614A300134283 /* LaunchScreen.storyboard in Resources */,
+				3AE7FD9B1C77974B006A6738 /* single_firework.caf in Resources */,
+				3AE7FDA51C7797A1006A6738 /* Take-Off.mp3 in Resources */,
 				3AB4212C1C7614A300134283 /* Assets.xcassets in Resources */,
+				3AE7FDA41C7797A1006A6738 /* Hotel.mp3 in Resources */,
+				3AE7FDA11C7797A1006A6738 /* Book-Of-Mormon.mp3 in Resources */,
+				3AE7FDA21C7797A1006A6738 /* Goldfish.mp3 in Resources */,
 				3AB4212A1C7614A300134283 /* Main.storyboard in Resources */,
+				3AE7FDA31C7797A1006A6738 /* Happy-Birthday.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +285,7 @@
 				3AD1B91A1C767FA300965496 /* TicketViewController.m in Sources */,
 				3AB421271C7614A300134283 /* ViewController.m in Sources */,
 				3AB421241C7614A300134283 /* AppDelegate.m in Sources */,
+				3AE7FD8D1C7791A0006A6738 /* AudioManager.m in Sources */,
 				3AB421211C7614A300134283 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
