@@ -38,6 +38,7 @@ static const NSTimeInterval kTimeoutInterval = 3;
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     self.view.hidden = YES;
 }
 
