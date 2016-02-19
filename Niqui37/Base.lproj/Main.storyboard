@@ -112,20 +112,49 @@
                         <viewControllerLayoutGuide type="bottom" id="6HK-d2-xA2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WtX-8F-PDd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="By1-Xv-3K5">
+                                <rect key="frame" x="152" y="638" width="71" height="37"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-5q-qIl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eeR-q2-oBu" id="Bna-O0-mJS"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y0y-5q-qIl" firstAttribute="leading" secondItem="WtX-8F-PDd" secondAttribute="leading" id="Etm-QM-WVD"/>
+                            <constraint firstItem="By1-Xv-3K5" firstAttribute="centerY" secondItem="WtX-8F-PDd" secondAttribute="centerY" id="Ucy-NE-eVx"/>
+                            <constraint firstItem="Y0y-5q-qIl" firstAttribute="top" secondItem="B47-Y7-zge" secondAttribute="bottom" id="Whm-Gg-Dbu"/>
+                            <constraint firstItem="6HK-d2-xA2" firstAttribute="top" secondItem="Y0y-5q-qIl" secondAttribute="bottom" id="ZP9-qb-4ZT"/>
+                            <constraint firstAttribute="trailing" secondItem="Y0y-5q-qIl" secondAttribute="trailing" id="eVU-VP-aDl"/>
+                            <constraint firstAttribute="bottom" secondItem="By1-Xv-3K5" secondAttribute="bottom" constant="-8" id="l6F-hJ-fAT"/>
+                            <constraint firstItem="By1-Xv-3K5" firstAttribute="centerX" secondItem="WtX-8F-PDd" secondAttribute="centerX" id="mth-S6-CFT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ucy-NE-eVx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="3dc-Pj-1nq"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pageControl" destination="By1-Xv-3K5" id="kx5-IF-9my"/>
+                        <outlet property="scrollView" destination="Y0y-5q-qIl" id="Zjf-Tw-iGe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjL-LM-FMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="655"/>
+            <point key="canvasLocation" x="1430.5" y="654.5"/>
         </scene>
     </scenes>
 </document>
