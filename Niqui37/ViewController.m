@@ -10,7 +10,8 @@
 
 #import "ViewController.h"
 
-static NSString *birthdayString = @"18/02/2016 13:38";
+static NSString *birthdayString = @"18/02/2016 23:25";
+static const NSTimeInterval kTimeoutInterval = 1;
 
 @interface ViewController ()
 
@@ -148,7 +149,7 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     rocket.velocityRange        = 100;
     rocket.yAcceleration        = -250;
     rocket.emissionRange        = M_PI / 4;
-    rocket.color                = [[UIColor whiteColor] colorWithAlphaComponent:1].CGColor;
+    rocket.color                = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
     rocket.redRange             = 0.75;
     rocket.greenRange           = 0.75;
     rocket.blueRange            = 0.75;
@@ -217,14 +218,13 @@ static NSString *birthdayString = @"18/02/2016 13:38";
     [self.fireworksView setNeedsDisplay];
     
     // Set up the timer to remove the fireworks
-    NSTimeInterval timeoutInterval = 3;
     if (self.removeFireworksTimer == nil || self.removeFireworksTimer.isValid == NO)
     {
-        self.removeFireworksTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutInterval target:self selector:@selector(removeFireworks) userInfo:nil repeats:NO];
+        self.removeFireworksTimer = [NSTimer scheduledTimerWithTimeInterval:kTimeoutInterval target:self selector:@selector(removeFireworks) userInfo:nil repeats:NO];
     }
     else
     {
-        NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:timeoutInterval];
+        NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:kTimeoutInterval];
         self.removeFireworksTimer.fireDate = fireDate;
     }
 }
