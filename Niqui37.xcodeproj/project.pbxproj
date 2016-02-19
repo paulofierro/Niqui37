@@ -16,11 +16,11 @@
 		3AD1B91A1C767FA300965496 /* TicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1B9191C767FA300965496 /* TicketViewController.m */; };
 		3AE7FD8D1C7791A0006A6738 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7FD8C1C7791A0006A6738 /* AudioManager.m */; };
 		3AE7FD9B1C77974B006A6738 /* single_firework.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9A1C77974B006A6738 /* single_firework.caf */; };
-		3AE7FDA11C7797A1006A6738 /* Book-Of-Mormon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */; };
-		3AE7FDA21C7797A1006A6738 /* Goldfish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */; };
-		3AE7FDA31C7797A1006A6738 /* Happy-Birthday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */; };
-		3AE7FDA41C7797A1006A6738 /* Hotel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */; };
-		3AE7FDA51C7797A1006A6738 /* Take-Off.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */; };
+		3AE7FDAB1C77A65D006A6738 /* Book-Of-Mormon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA61C77A65D006A6738 /* Book-Of-Mormon.mp3 */; };
+		3AE7FDAC1C77A65D006A6738 /* Goldfish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA71C77A65D006A6738 /* Goldfish.mp3 */; };
+		3AE7FDAD1C77A65D006A6738 /* Happy Birthday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA81C77A65D006A6738 /* Happy Birthday.mp3 */; };
+		3AE7FDAE1C77A65D006A6738 /* Hotel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDA91C77A65D006A6738 /* Hotel.mp3 */; };
+		3AE7FDAF1C77A65D006A6738 /* Take-Off.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7FDAA1C77A65D006A6738 /* Take-Off.mp3 */; };
 		3E71DD423CBD4532FA27CAB1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E626D57D9F193DDB207AD47 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +41,11 @@
 		3AE7FD8B1C7791A0006A6738 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		3AE7FD8C1C7791A0006A6738 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
 		3AE7FD9A1C77974B006A6738 /* single_firework.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = single_firework.caf; sourceTree = "<group>"; };
-		3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Book-Of-Mormon.mp3"; sourceTree = "<group>"; };
-		3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Goldfish.mp3; sourceTree = "<group>"; };
-		3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Happy-Birthday.mp3"; sourceTree = "<group>"; };
-		3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hotel.mp3; sourceTree = "<group>"; };
-		3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Take-Off.mp3"; sourceTree = "<group>"; };
+		3AE7FDA61C77A65D006A6738 /* Book-Of-Mormon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Book-Of-Mormon.mp3"; sourceTree = "<group>"; };
+		3AE7FDA71C77A65D006A6738 /* Goldfish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Goldfish.mp3; sourceTree = "<group>"; };
+		3AE7FDA81C77A65D006A6738 /* Happy Birthday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Happy Birthday.mp3"; sourceTree = "<group>"; };
+		3AE7FDA91C77A65D006A6738 /* Hotel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Hotel.mp3; sourceTree = "<group>"; };
+		3AE7FDAA1C77A65D006A6738 /* Take-Off.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Take-Off.mp3"; sourceTree = "<group>"; };
 		3E626D57D9F193DDB207AD47 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B22352ACE9771F120BD5157 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6295EE3A6DA128B3429B01D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,11 +121,11 @@
 		3AE7FD891C779130006A6738 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				3AE7FD9C1C7797A1006A6738 /* Book-Of-Mormon.mp3 */,
-				3AE7FD9D1C7797A1006A6738 /* Goldfish.mp3 */,
-				3AE7FD9E1C7797A1006A6738 /* Happy-Birthday.mp3 */,
-				3AE7FD9F1C7797A1006A6738 /* Hotel.mp3 */,
-				3AE7FDA01C7797A1006A6738 /* Take-Off.mp3 */,
+				3AE7FDA61C77A65D006A6738 /* Book-Of-Mormon.mp3 */,
+				3AE7FDA71C77A65D006A6738 /* Goldfish.mp3 */,
+				3AE7FDA81C77A65D006A6738 /* Happy Birthday.mp3 */,
+				3AE7FDA91C77A65D006A6738 /* Hotel.mp3 */,
+				3AE7FDAA1C77A65D006A6738 /* Take-Off.mp3 */,
 				3AE7FD9A1C77974B006A6738 /* single_firework.caf */,
 			);
 			name = Audio;
@@ -217,13 +217,13 @@
 			files = (
 				3AB4212F1C7614A300134283 /* LaunchScreen.storyboard in Resources */,
 				3AE7FD9B1C77974B006A6738 /* single_firework.caf in Resources */,
-				3AE7FDA51C7797A1006A6738 /* Take-Off.mp3 in Resources */,
+				3AE7FDAF1C77A65D006A6738 /* Take-Off.mp3 in Resources */,
 				3AB4212C1C7614A300134283 /* Assets.xcassets in Resources */,
-				3AE7FDA41C7797A1006A6738 /* Hotel.mp3 in Resources */,
-				3AE7FDA11C7797A1006A6738 /* Book-Of-Mormon.mp3 in Resources */,
-				3AE7FDA21C7797A1006A6738 /* Goldfish.mp3 in Resources */,
+				3AE7FDAE1C77A65D006A6738 /* Hotel.mp3 in Resources */,
+				3AE7FDAB1C77A65D006A6738 /* Book-Of-Mormon.mp3 in Resources */,
+				3AE7FDAC1C77A65D006A6738 /* Goldfish.mp3 in Resources */,
 				3AB4212A1C7614A300134283 /* Main.storyboard in Resources */,
-				3AE7FDA31C7797A1006A6738 /* Happy-Birthday.mp3 in Resources */,
+				3AE7FDAD1C77A65D006A6738 /* Happy Birthday.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
