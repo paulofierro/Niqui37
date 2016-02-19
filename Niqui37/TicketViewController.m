@@ -6,6 +6,8 @@
 //  Copyright © 2016 Paulo Fierro. All rights reserved.
 //
 
+@import AVFoundation;
+
 #import "TicketViewController.h"
 #import "AudioManager.h"
 
@@ -35,11 +37,72 @@ typedef NS_ENUM(NSInteger, Page) {
     
     [self.view addGestureRecognizer:self.swipeRecognizer];
     
+    // The first time we want to navigate the scrollbar automatically based on when the tracks finish
+    self.scrollView.userInteractionEnabled = NO;
+
+    // Listen for when the audio tracks end
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    
     // Define the images and add them to the scroll view
     self.images = @[@"Flight_out", @"Hotel", @"Goldfish", @"Saturday", @"Mormon", @"Flight_back"];
     [self createScrollableImages];
 
-    [self showPage:0];
+    // Navigate to the first page
+    [self navigateToPage:PageFlightToNY];
+}
+
+/// Force the navigation to a specific page in the scrollview
+- (void)navigateToPage:(NSInteger)pageNumber
+{
+    CGFloat pageWidth   = CGRectGetWidth(self.scrollView.frame);
+    CGPoint offset      = CGPointMake(pageWidth * pageNumber, 0);
+    [self.scrollView setContentOffset:offset animated:YES];
+    
+    [self playAudioForPage:pageNumber];
+}
+
+/// Handle when a track has stopped playing stop receiving notification
+/// We will automatically take the user to the next page
+- (void)playerItemDidReachEnd:(NSNotification *)notification
+{
+    switch (self.pageControl.currentPage)
+    {
+        case PageFlightToNY:
+        {
+            [self navigateToPage:PageHotel];
+            break;
+        }
+        case PageHotel:
+        {
+            [self navigateToPage:PageConcert];
+            break;
+        }
+        case PageConcert:
+        {
+            [self navigateToPage:PageNothing];
+            break;
+        }
+        case PageNothing:
+        {
+            [self navigateToPage:PageTheater];
+            break;
+        }
+        case PageTheater:
+        {
+            [self navigateToPage:PageFlightToGCM];
+            
+            // Stop listening to notifications so auto navigation stops working
+            [[NSNotificationCenter defaultCenter] removeObserver:self];
+            
+            // Now that auto navigation is disabled, give control back to the user
+            self.scrollView.userInteractionEnabled = YES;
+            break;
+        }
+        case PageFlightToGCM:
+        {
+            break;
+        }
+    }
 }
 
 - (void)createScrollableImages
@@ -87,7 +150,10 @@ typedef NS_ENUM(NSInteger, Page) {
     }
 }
 
-- (void)showPage:(NSInteger)page
+#pragma mark - Audio Methods
+
+// Play audio for a specific page when a user has scrolled to it
+- (void)playAudioForPage:(NSInteger)page
 {
     self.pageControl.currentPage = page;
     
@@ -130,11 +196,13 @@ typedef NS_ENUM(NSInteger, Page) {
 
 #pragma mark - Handle Swipes and Unwinding
 
+/// Needed for the Exit action in the Storyboard
 - (IBAction)unwindSegue:(UIStoryboardSegue *)segue
 {
     // Intentionally left blank
 }
 
+/// Handle downward swipes to close this view
 - (void)handleSwipe
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -142,11 +210,12 @@ typedef NS_ENUM(NSInteger, Page) {
 
 #pragma mark - Scroll View Delegate Methods
 
+/// When the scroll view has been scrolled play the respective audio
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat pageWidth       = CGRectGetWidth(scrollView.frame);
     float fractionalPage    = scrollView.contentOffset.x / pageWidth;
-    [self showPage:lround(fractionalPage)];
+    [self playAudioForPage:lround(fractionalPage)];
 }
 
 #pragma mark - Getters
