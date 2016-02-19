@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Birthday Niqui!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIk-jl-iUT">
-                                <rect key="frame" x="20" y="100" width="384" height="142"/>
+                                <rect key="frame" x="20" y="75" width="384" height="142"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="top" secondItem="36I-qm-ah7" secondAttribute="bottom" constant="16" id="WYs-6g-xc3"/>
                             <constraint firstItem="36I-qm-ah7" firstAttribute="top" secondItem="Woa-Dx-glh" secondAttribute="bottom" constant="16" id="ZAd-Vz-aLd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="59u-5W-oAz" secondAttribute="bottom" id="aQi-LJ-b5E"/>
-                            <constraint firstItem="ZIk-jl-iUT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="agW-2M-lfU"/>
+                            <constraint firstItem="ZIk-jl-iUT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="agW-2M-lfU"/>
                             <constraint firstItem="59u-5W-oAz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="azd-A0-8QA"/>
                             <constraint firstItem="x87-dS-Lx6" firstAttribute="leading" secondItem="36I-qm-ah7" secondAttribute="leading" id="bmQ-N1-pFc"/>
                             <constraint firstAttribute="trailing" secondItem="59u-5W-oAz" secondAttribute="trailing" id="ftW-GM-jwv"/>
