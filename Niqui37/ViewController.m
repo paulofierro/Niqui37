@@ -12,7 +12,7 @@
 #import "AudioManager.h"
 
 static NSString *birthdayString = @"18/02/2016 23:25";
-static const NSTimeInterval kTimeoutInterval = 1;
+static const NSTimeInterval kTimeoutInterval = 3;
 
 @interface ViewController ()
 
