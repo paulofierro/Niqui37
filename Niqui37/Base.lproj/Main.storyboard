@@ -150,11 +150,13 @@
                     <connections>
                         <outlet property="pageControl" destination="By1-Xv-3K5" id="kx5-IF-9my"/>
                         <outlet property="scrollView" destination="Y0y-5q-qIl" id="Zjf-Tw-iGe"/>
+                        <segue destination="0Ea-Hs-Jb5" kind="unwind" identifier="unwindTicketView" unwindAction="unwindSegue:" id="4t8-vh-qAY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjL-LM-FMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Ea-Hs-Jb5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1430.5" y="654.5"/>
+            <point key="canvasLocation" x="1453.5" y="654.5"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeRecognizer;
 
 @end
 
@@ -22,9 +23,10 @@
 {
     [super viewDidLoad];
     
+    [self.view addGestureRecognizer:self.swipeRecognizer];
+    
     // Define the images
     self.images = @[@"Flight_out", @"Hotel", @"Goldfish", @"Saturday", @"Mormon", @"Flight_back"];
-    
     [self createScrollableImages];
 }
 
@@ -73,6 +75,16 @@
     }
 }
 
+- (IBAction)unwindSegue:(UIStoryboardSegue *)segue
+{
+    // Intentionally left blank
+}
+
+- (void)handleSwipe
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Scroll View Delegate Methods
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -80,6 +92,19 @@
     CGFloat pageWidth       = CGRectGetWidth(scrollView.frame);
     float fractionalPage    = scrollView.contentOffset.x / pageWidth;
     self.pageControl.currentPage = lround(fractionalPage);
+}
+
+#pragma mark - Getters
+
+- (UISwipeGestureRecognizer *)swipeRecognizer
+{
+    if (_swipeRecognizer == nil)
+    {
+        _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
+        _swipeRecognizer.numberOfTouchesRequired = 1;
+        _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    }
+    return _swipeRecognizer;
 }
 
 - (void)didReceiveMemoryWarning

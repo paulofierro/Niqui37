@@ -10,4 +10,6 @@
 
 @interface TicketViewController : UIViewController
 
+- (IBAction)unwindSegue:(UIStoryboardSegue *)segue;
+
 @end
