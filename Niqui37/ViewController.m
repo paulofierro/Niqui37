@@ -34,9 +34,9 @@ static const NSTimeInterval kTimeoutInterval = 1;
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:animated];
     
     // Add the emitter and add it to the view
     [self.baseLayer addSublayer:self.emitter];
@@ -101,7 +101,6 @@ static const NSTimeInterval kTimeoutInterval = 1;
 
 - (void)animateMessage
 {
-    // move marker up and down:
     CABasicAnimation *zoom      = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     zoom.toValue                = @(1.1);
     zoom.autoreverses           = YES;
@@ -245,7 +244,7 @@ static const NSTimeInterval kTimeoutInterval = 1;
     {
         _swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe)];
         _swipeRecognizer.numberOfTouchesRequired = 1;
-        _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+        _swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
     }
     return _swipeRecognizer;
 }
