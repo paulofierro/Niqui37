@@ -1,3 +1,4 @@
+
 //
 //  ViewController.m
 //  Niqui37
@@ -316,7 +317,7 @@ static const NSTimeInterval kTimeoutInterval = 3;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    if (self.isUnlocked)
+    if (self.isUnlocked && self.presentedViewController == nil)
     {
         for (UITouch *touch in touches.allObjects)
         {
