@@ -7,6 +7,16 @@
 //
 
 #import "TicketViewController.h"
+#import "AudioManager.h"
+
+typedef NS_ENUM(NSInteger, Page) {
+    PageFlightToNY = 0,
+    PageHotel = 1,
+    PageConcert = 2,
+    PageNothing = 3,
+    PageTheater = 4,
+    PageFlightToGCM = 5,
+};
 
 @interface TicketViewController () <UIScrollViewDelegate>
 
@@ -25,9 +35,11 @@
     
     [self.view addGestureRecognizer:self.swipeRecognizer];
     
-    // Define the images
+    // Define the images and add them to the scroll view
     self.images = @[@"Flight_out", @"Hotel", @"Goldfish", @"Saturday", @"Mormon", @"Flight_back"];
     [self createScrollableImages];
+
+    [self showPage:0];
 }
 
 - (void)createScrollableImages
@@ -75,6 +87,49 @@
     }
 }
 
+- (void)showPage:(NSInteger)page
+{
+    self.pageControl.currentPage = page;
+    
+    AudioManager *audioManager = [AudioManager sharedManager];
+    
+    switch (page)
+    {
+        case PageFlightToNY:
+        {
+            [audioManager playFlightLoop];
+            break;
+        }
+        case PageHotel:
+        {
+            [audioManager playHotel];
+            break;
+        }
+        case PageConcert:
+        {
+            [audioManager playConcert];
+            break;
+        }
+        case PageNothing:
+        {
+//            [audioManager playHappyBirthday];
+            break;
+        }
+        case PageTheater:
+        {
+            [audioManager playTheater];
+            break;
+        }
+        case PageFlightToGCM:
+        {
+            [audioManager playFlightLoop];
+            break;
+        }
+    }
+}
+
+#pragma mark - Handle Swipes and Unwinding
+
 - (IBAction)unwindSegue:(UIStoryboardSegue *)segue
 {
     // Intentionally left blank
@@ -91,7 +146,7 @@
 {
     CGFloat pageWidth       = CGRectGetWidth(scrollView.frame);
     float fractionalPage    = scrollView.contentOffset.x / pageWidth;
-    self.pageControl.currentPage = lround(fractionalPage);
+    [self showPage:lround(fractionalPage)];
 }
 
 #pragma mark - Getters
