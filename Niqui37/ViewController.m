@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "AudioManager.h"
 
-static NSString *birthdayString = @"18/02/2016 23:25";
+static NSString *birthdayString = @"19/02/2016 09:00";
 static const NSTimeInterval kTimeoutInterval = 3;
 
 @interface ViewController ()
@@ -35,6 +35,11 @@ static const NSTimeInterval kTimeoutInterval = 3;
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    self.view.hidden = YES;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -46,10 +51,9 @@ static const NSTimeInterval kTimeoutInterval = 3;
     // Update the date
     [self updateDate];
 
-    // Create the timer
-    self.labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
-    
     [self.view addGestureRecognizer:self.swipeRecognizer];
+    
+    self.view.hidden = NO;
 }
 
 - (void)updateDate
@@ -58,22 +62,37 @@ static const NSTimeInterval kTimeoutInterval = 3;
     
     if ([self.birthday earlierDate:now] == self.birthday)
     {
+        // Play the song
+        [[AudioManager sharedManager] playHappyBirthday];
+        
         // Stop the timer
         [self.labelUpdateTimer invalidate];
         
-        // Its birthday time
+        // Its birthday time. Hide the fields and show the message
         self.days.text      = @"";
         self.hours.text     = @"";
         self.minutes.text   = @"🎊🎂🎉";
         self.seconds.text   = @"";
         self.message.hidden = NO;
         
-        // Unlock the view
-        self.unlocked = YES;
+        // Add a pulse animation
         [self animateMessage];
+        
+        // Unlock the view so we can go to the next section
+        self.unlocked = YES;
+        
+        // Fire a work
+        CGRect bounds = self.fireworksView.bounds;
+        [self addFireworkAtPoint:CGPointMake(CGRectGetMidX(bounds), CGRectGetMaxY(bounds))];
     }
     else
     {
+        if (self.labelUpdateTimer == nil)
+        {
+            // Create the timer
+            self.labelUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateDate) userInfo:nil repeats:YES];
+        }
+        
         self.message.hidden = YES;
         
         // Its no birthday time yet, update the calendar
@@ -128,7 +147,7 @@ static const NSTimeInterval kTimeoutInterval = 3;
 
 - (void)addFireworkAtPoint:(CGPoint)point
 {
-    [AudioManager playFireworks];
+    [[AudioManager sharedManager] playFireworks];
     
     // Derived from https://github.com/tapwork/iOS-Particle-Fireworks
     UIImage *image = [UIImage imageNamed:@"firework"];
