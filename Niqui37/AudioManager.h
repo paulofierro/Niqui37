@@ -11,7 +11,14 @@
 @interface AudioManager : NSObject
 
 /// Play a single firework sound effect
-+ (void)playFireworks;
+- (void)playFireworks;
+
+/// Play the Happy Birthday song
+- (void)playHappyBirthday;
+- (void)playFlightLoop;
+- (void)playHotel;
+- (void)playConcert;
+- (void)playTheater;
 
 + (instancetype)sharedManager;
 
