@@ -37,11 +37,16 @@ typedef NS_ENUM(NSInteger, Page) {
     
     [self.view addGestureRecognizer:self.swipeRecognizer];
     
-    // The first time we want to navigate the scrollbar automatically based on when the tracks finish
-    self.scrollView.userInteractionEnabled = NO;
-
-    // Listen for when the audio tracks end
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    if ([AudioManager sharedManager].shouldAutomaticallyNavigate)
+    {
+        [AudioManager sharedManager].shouldAutomaticallyNavigate = NO;
+        
+        // If auto-navigation is on, we want to navigate the scrollbar based on when the tracks finish
+        self.scrollView.userInteractionEnabled = NO;
+        
+        // Listen for when the audio tracks end
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    }
     
     // Define the images and add them to the scroll view
     self.images = @[@"Flight_out", @"Hotel", @"Goldfish", @"Saturday", @"Mormon", @"Flight_back"];
@@ -178,7 +183,7 @@ typedef NS_ENUM(NSInteger, Page) {
         }
         case PageNothing:
         {
-//            [audioManager playHappyBirthday];
+            [audioManager playNothing];
             break;
         }
         case PageTheater:

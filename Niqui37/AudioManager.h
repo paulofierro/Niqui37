@@ -10,6 +10,10 @@
 
 @interface AudioManager : NSObject
 
+/// Toggles automatic navigation in the TicketViewController
+/// This is a TERRIBLE place to put this
+@property (nonatomic) BOOL shouldAutomaticallyNavigate;
+
 /// Play a single firework sound effect
 - (void)playFireworks;
 
@@ -18,6 +22,7 @@
 - (void)playFlightLoop;
 - (void)playHotel;
 - (void)playConcert;
+- (void)playNothing;
 - (void)playTheater;
 
 + (instancetype)sharedManager;

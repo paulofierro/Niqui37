@@ -42,6 +42,12 @@
     [self addItemToQueue:item];
 }
 
+- (void)playNothing
+{
+    AVPlayerItem *item = [self playerForLoop:@"Nothing"];
+    [self addItemToQueue:item];
+}
+
 - (void)playTheater
 {
     AVPlayerItem *item = [self playerForLoop:@"Book-Of-Mormon"];
@@ -138,6 +144,17 @@
     {
         AudioServicesPlaySystemSound(soundID);
     }
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        // Turn this on by default
+        self.shouldAutomaticallyNavigate = YES;
+    }
+    return self;
 }
 
 #pragma mark - Static Methods
